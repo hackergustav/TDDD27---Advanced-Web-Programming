@@ -1,0 +1,18 @@
+<div id="editor-outer" class="m-5">
+    <div>
+        <h3>Group: {{ this.selectedGroupName }}</h3>
+        <h2>{{title}}</h2>
+    </div>
+
+    <div *ngIf="(isLoading$ | async)">
+        <h2>Loading document..</h2>
+    </div>
+
+    <div id="editor-js" class="m-3 example-button-row"></div>
+    <div class="example-button-row">
+        <button mat-raised-button color="primary" class="m-1" (click)="saveArticle()">Save document</button>
+        <button mat-raised-button color="primary" class="m-1" (click)="clearArticle()">Clear editor</button>
+        <button mat-raised-button color="primary" class="m-1" (click)="openDialog()">Insert link to group documents</button>
+        <button mat-raised-button color="primary" class="m-1" (click)="deleteDocument()">Delete document</button>
+    </div>
+</div>

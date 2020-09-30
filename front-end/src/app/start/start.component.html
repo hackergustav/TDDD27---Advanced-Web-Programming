@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="container2">
+        <h2>Welcome to Collabify!</h2>
+
+        <h3 *ngIf="!authService.isLoggedIn">Login to use our cool app!</h3>
+
+        <h3 *ngIf="authService.isLoggedIn">You are logged in!</h3>
+    </div>
+</div>

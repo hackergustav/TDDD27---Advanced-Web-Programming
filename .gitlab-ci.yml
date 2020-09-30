@@ -1,0 +1,30 @@
+
+image: node:latest
+
+cache:
+  paths:
+    - node_modules/
+
+build-test:
+
+  before_script:
+    - cd front-end
+    - npm install -g @angular/cli
+    - npm install --save-dev @angular-devkit/build-angular
+
+
+
+  script:
+    - ng build --prod=true
+
+
+#test-test:
+      #
+      ##  before_script:
+      ##    - cd front-end
+      ##    - npm install -g @angular/cli
+      ##    - npm install --save-dev @angular-devkit/build-angular
+      #
+      #
+    ##  script:
+    ##    - ng test

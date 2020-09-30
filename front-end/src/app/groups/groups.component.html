@@ -1,0 +1,32 @@
+<div class="m-5">
+    <div *ngIf="isLoading$ | async" class="cards-container">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>Loading groups..</mat-card-title>
+                <mat-card-subtitle>Your groups will be displayed momentarily</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+
+            </mat-card-content>
+
+        </mat-card>
+    </div>
+
+    <div *ngIf="!(isLoading$ | async)" class="cards-container">
+        <mat-card class="example-card" (click)="openDialog()" style="color: grey">
+            <mat-card-header>
+                <mat-icon style="margin-top: 4px">add</mat-icon>
+                <mat-card-title>Join/Create new group</mat-card-title>
+            </mat-card-header>
+        </mat-card>
+
+        <mat-card class="example-card" *ngFor="let group of groups" routerLink = "/docs" (click)="setCurrentGroup(group._id, group.name)">
+            <mat-card-header>
+                <mat-card-title> {{ group.name }} </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <p> {{ group.description}}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

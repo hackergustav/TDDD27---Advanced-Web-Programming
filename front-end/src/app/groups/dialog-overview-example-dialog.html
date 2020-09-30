@@ -1,0 +1,20 @@
+<div *ngIf="!(isLoading$ | async)" style="display: flex; flex-direction: column; align-items: center;">
+    <div style="display: flex; flex-direction: column; text-align: center; align-items: center;">
+        <h1 mat-dialog-title class="m-2">Create new group</h1>
+        <label for="groupNameInput">Group name</label>
+        <input type="text" id="groupNameInput" style="width: 25vw;" required>
+        <label for="groupDescInput">Group description</label>
+        <input type="text" id="groupDescInput" style="width: 25vw;">
+        <button mat-raised-button color="primary" class="m-1" style="width: 25vw;" (click)="createGroup()">Create group</button>
+    </div>
+
+    <div style="display: flex; flex-direction: column; text-align: center; align-items: center;">
+        <h1 mat-dialog-title class="m-2">Join group</h1>
+        <label for="groupNameInput">Link: </label>
+        <input type="text" id="groupLinkInput" style="width: 25vw;" required>
+        <button mat-raised-button color="primary" class="m-1" style="width: 25vw;" (click)="joinGroup()">Join group</button>
+    </div>
+</div>
+<div *ngIf="(isLoading$ | async)" style="display: flex; flex-direction: column; text-align: center; align-items: center;">
+    <h1 mat-dialog-title class="m-2">Loading..</h1>
+</div>

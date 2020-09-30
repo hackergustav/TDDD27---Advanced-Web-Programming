@@ -1,0 +1,32 @@
+<div class="m-5">
+  <h2>{{this.groupService.currentGroupName}}</h2>
+    <div *ngIf="isLoading$ | async" class="cards-container">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>Loading articles..</mat-card-title>
+                <mat-card-subtitle>Your articles will be displayed momentarily</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+
+            </mat-card-content>
+
+        </mat-card>
+    </div>
+
+    <div *ngIf="!(isLoading$ | async)" class="cards-container">
+        <mat-card class="example-card" (click)="openDialog()" style="color: grey">
+            <mat-card-header>
+                <mat-icon style="margin-top: 4px">add</mat-icon>
+                <mat-card-title>Create new document</mat-card-title>
+            </mat-card-header>
+
+        </mat-card>
+        <mat-card class="example-card" *ngFor="let art of articles" (click)="loadChosenDocInEditor(art.id, art.title, art.group)">
+            <mat-card-header>
+                <mat-card-title> {{ art.title }} </mat-card-title>
+            </mat-card-header>
+        </mat-card>
+    </div>
+
+    <button mat-raised-button color="primary" class="m-1" (click)="getInviteLink()">Copy invite link to clipboard</button>
+</div>

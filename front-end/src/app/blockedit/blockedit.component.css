@@ -1,0 +1,60 @@
+#editor-outer{
+  width:650px;
+  margin:auto;
+}
+
+#editor-js{
+  min-height:80vh;
+  width: 50vw;
+  border-style: solid;
+  border-color: blue; 
+  width: 100%;
+}
+
+.example-button-row {
+  display: table-cell;
+}
+
+.example-button-row button {
+  display: table-cell;
+  margin-right: 8px;
+}
+
+/deep/.mat-dialog-container {
+  border-radius: 0px !important;
+}
+
+.example-card {
+  margin: 2px;
+  width: 45vw;
+  height: 55px;
+  transition: all .2s ease-in-out;
+}
+
+.border-sharp .mat-card:hover {
+  transform: scale(1.03);
+  z-index: 100;
+}
+
+/deep/.mat-card {
+  border-radius: 0px !important;
+}
+
+.simple-image {
+  padding: 20px 0;
+}
+
+.link-tool input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e4e4e4;
+  border-radius: 3px;
+  outline: none;
+  font-size: 14px;
+}
+
+.submit-button {
+  width: 10px;
+  height: 10px;
+  color: blue;
+}
